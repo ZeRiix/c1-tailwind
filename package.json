@@ -3,6 +3,11 @@
     "sass": "^1.68.0"
   },
   "scripts": {
-    "watch": "sass --watch ./src/css/main.scss ./dist/css/main.css"
+    "start": "node main.js",
+    "watch": "sass --watch ./public/src/css/main.scss ./public/dist/css/main.css"
+  },
+  "dependencies": {
+    "@fastify/static": "^6.11.2",
+    "fastify": "^4.23.2"
   }
 }

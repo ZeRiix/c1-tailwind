@@ -1,0 +1,214 @@
+@import url("https://fonts.googleapis.com/css2?family=Istok+Web:ital,wght@0,400;0,700;1,400&display=swap");
+:root {
+  --background: #1E293A;
+  --primary: #5D7A97;
+  --istok-web: Istok Web, sans-serif;
+  --footer-background: linear-gradient(180deg, #FF9B65 -25.84%, #FF2896 100%);
+  --send-btn-background: linear-gradient(180deg, #00FFBF 0%, #00D5D5 100%);
+  --white: white;
+  --title-profile: linear-gradient(180deg, #FF2896 0%, #FF9B65 100%);
+  --subtitle-profile: #5D7A97;
+  --icon-footer-profile: #FF2896;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: #5D7A97;
+  font-family: "Istok Web", sans-serif;
+  font-style: normal;
+  line-height: normal;
+  margin-top: -1rem;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #5D7A97;
+  font-family: "Istok Web", sans-serif;
+  line-height: normal;
+  background: linear-gradient(180deg, #FF2896 0%, #FF9B65 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1rem;
+}
+
+.is-rounded {
+  border-radius: 12.5rem;
+}
+
+.is-small {
+  width: 2.5rem;
+  height: 2.5rem;
+  margin: 1rem;
+}
+
+.is-link {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  color: #FF2896;
+}
+
+.btn-send {
+  display: flex;
+  flex-direction: row-reverse;
+  width: 100%;
+  height: 0;
+  width: 80%;
+  justify-content: right;
+}
+
+.send {
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3rem;
+  margin-right: -1rem;
+  background: linear-gradient(180deg, #00FFBF 0%, #00D5D5 100%);
+}
+
+.content {
+  padding: 1rem;
+  font-family: "Istok Web", sans-serif;
+  line-height: normal;
+  color: #5D7A97;
+  padding: 2rem;
+  padding-bottom: 0;
+}
+
+.footer-user-profil {
+  background: linear-gradient(180deg, #FF9B65 -25.84%, #FF2896 100%);
+  border-bottom-right-radius: 1rem;
+  display: flex;
+  clip-path: polygon(0 0, 100% 32%, 100% 100%, 0% 100%);
+}
+
+.user-profile {
+  background: #1E293A;
+}
+
+.list-btn-social {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.media {
+  display: flex;
+  width: 80%;
+  border-bottom: #5D7A97 1px solid;
+}
+
+@media only screen and (min-width: 600px) {
+  .user-profile {
+    width: 45rem;
+    height: 21.125rem;
+    border-radius: 1rem;
+    position: relative;
+  }
+  .profil-image {
+    width: 15rem;
+    height: 21.125rem;
+    margin-left: 0rem;
+    margin-top: 0rem;
+  }
+  .profil-image img {
+    width: 100%;
+    height: 100%;
+    border-bottom-left-radius: 1rem;
+    border-top-left-radius: 1rem;
+    object-fit: cover;
+  }
+  .card {
+    display: flex;
+    flex-direction: row;
+  }
+  .btn-send {
+    z-index: 100000000000000000;
+    position: absolute;
+    right: 2rem;
+  }
+  .footer-user-profil {
+    justify-content: center;
+    position: relative;
+    top: -7.25rem;
+    margin-left: 15rem;
+    height: 6.251rem;
+  }
+  .content {
+    padding-left: 0;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .subtitle {
+    text-align: center;
+  }
+  .title {
+    text-align: center;
+  }
+  .content {
+    text-align: center;
+  }
+  .footer-user-profil {
+    border-bottom-left-radius: 1rem;
+    align-items: center;
+  }
+  .card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+  .profil-image {
+    width: 11rem;
+    height: 11rem;
+    flex-shrink: 0;
+    border-radius: 12.5rem;
+  }
+  .profil-image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 12.5rem;
+  }
+  .card-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 12.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+  }
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .user-profile {
+    background: #1E293A;
+    border-radius: 1rem;
+  }
+  .list-btn-social {
+    width: 100%;
+    height: 7.0625rem;
+  }
+  .media {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

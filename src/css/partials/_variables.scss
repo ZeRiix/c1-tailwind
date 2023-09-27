@@ -1,0 +1,27 @@
+
+// istok Web
+@import url('https://fonts.googleapis.com/css2?family=Istok+Web:ital,wght@0,400;0,700;1,400&display=swap');
+$istok-web: 'Istok Web', sans-serif;
+
+// Colors
+$background: #1E293A;
+$primary: #5D7A97;
+$footer-background: linear-gradient(180deg, #FF9B65 -25.84%, #FF2896 100%);
+$send-btn-background: linear-gradient(180deg, #00FFBF 0%, #00D5D5 100%);
+$white: white;
+$title-profile: linear-gradient(180deg, #FF2896 0%, #FF9B65 100%);
+$subtitle-profile: #5D7A97;
+$icon-footer-profile: #FF2896;
+
+
+:root {
+    --background: #{$background};
+    --primary: #{$primary};
+    --istok-web: #{$istok-web};
+    --footer-background: #{$footer-background};
+    --send-btn-background: #{$send-btn-background};
+    --white: #{$white};
+    --title-profile: #{$title-profile};
+    --subtitle-profile: #{$subtitle-profile};
+    --icon-footer-profile: #{$icon-footer-profile};
+}

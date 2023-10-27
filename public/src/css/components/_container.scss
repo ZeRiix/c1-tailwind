@@ -1,16 +1,13 @@
-@use '../partials/variables' as v;
+@use "../partials/variables" as v;
 
 .container {
-    margin: 0 auto;
-    padding: 0 1rem;
-    max-width: 1280px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+	margin: 0 auto;
+	padding: 0 1rem;
+	max-width: 100%;
 
-    @each $size, $value in v.$breakpoints {
-        @media screen and (min-width: $value) {
-            max-width: $value;
-        }
-    }
+	@each $name, $size in v.$breakPoints {
+		@media screen and (min-width: $size) {
+			max-width: $size;
+		}
+	}
 }

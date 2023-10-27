@@ -1,120 +1,84 @@
-@use '../partials/functions' as f;
-@use '../partials/mixins' as m;
+@use "../partials/functions" as f;
+@use "../partials/mixins" as m;
 
 .bioCard {
-    position: relative;
-    width: f.rem(320);
-    padding: f.rem(32) f.rem(32) 0 f.rem(32);
-    border-radius: f.rem(16);
-    @include m.flexbox(column, nowrap, flex-start, center);
-    color: var(--lightBlue);
-    background: var(--darkBlue);
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    overflow: hidden;
+	width: f.rem(320);
+	border-radius: f.rem(16);
+	padding: f.rem(32);
+	background-color: var(--darkBlue);
+	color: var(--lightBlue);
+	text-align: center;
+	position: relative;
+	overflow: hidden;
+	@include m.flexbox(column, nowrap, flex-start, stretch);
+	&__header {
+		position: absolute;
+		top: f.rem(16);
+		right: f.rem(16);
+		left: f.rem(16);
+		@include m.flexbox(row, nowrap, flex-end, center);
+	}
+	&__img {
+		@include m.roundImage(50rem);
+		width: f.rem(176);
+		align-self: center;
+		// filter: saturate(0);
+		margin-bottom: f.rem(24);
+	}
+	&__h1 {
+		margin-top: 0;
+		margin-bottom: f.rem(12);
+		font-size: f.rem(24);
+		line-height: 1;
+		@include m.textGradient(bottom, var(--pink), var(--orange));
+	}
 
-    &__a {
-        width: f.rem(32);
-        @include m.rounded(50rem);
-        @include m.flexbox(row, nowrap, center, center);
-        background: var(--white);
+	&__h2 {
+		margin-top: 0;
+		margin-bottom: f.rem(24);
+		font-weight: 400;
+		font-size: f.rem(20);
+		line-height: 1;
+	}
 
-        &--alt {
-            position: absolute;
-            top: f.rem(16);
-            right: f.rem(16);
-            background: linear-gradient(180deg, var(--lightGreen) 0%, var(--darkGreen) 100%);
-        }
-    }
+	&__hr {
+		margin-top: 0;
+		margin-bottom: f.rem(16);
+		border-color: var(--lightBlue);
+	}
 
-    &__img {
-        width: f.rem(176);
-        @include m.rounded(50rem);
-    }
+	&__p {
+		margin-top: 0;
+		margin-bottom: f.rem(56);
+		line-height: normal;
+	}
 
-    &__h1, &__h2, &__p {
-        text-align: center;
-    }
+	&__footer {
+		position: relative;
+		&::before {
+			content: "";
+			position: absolute;
+			top: f.rem(-32);
+			left: f.rem(-32);
+			right: f.rem(-32);
+			bottom: f.rem(-64);
+			background: linear-gradient(-187deg, var(--orange) 0%, var(--pink) 60%);
+			transform: skewY(7deg);
+		}
+	}
 
-    &__h1 {
-        font-size: f.rem(24);
-        font-weight: 700;
-        background: linear-gradient(180deg, var(--pink) 0%, var(--orange) 100%);;
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
+	&__ul {
+		position: relative;
+		@include m.resetList;
+		@include m.flexbox(row, wrap, center, center, f.rem(24));
+	}
 
-    &__h2 {
-        font-size: f.rem(20);
-        font-weight: 400;
-    }
-
-    &__hr {
-        height: f.rem(1);
-        background: var(--lightBlue);
-        border: none;
-    }
-
-    &__footer {
-        position: relative;
-        z-index: 1;
-        height: f.rem(110);
-        margin: 0 f.rem(-32);
-        @include m.flexbox(row, nowrap, center, center);
-
-        & > svg {
-            position: absolute;
-            top: 0;
-            left: 0;
-        }
-
-        nav {
-            z-index: 2;
-
-            ul {
-                @include m.resetUl();
-                @include m.flexbox(row, nowrap, flex-start, stretch, f.rem(24));
-            }
-        }
-    }
-
-    @media (min-width: 992px) {
-        width: f.rem(720);
-        height: f.rem(340);
-        padding: 0;
-        flex-direction: row;
-
-        &__header {
-            width: f.rem(240);
-            height: 100%;
-            flex-shrink: 0;
-        }
-
-        &__img {
-            width: 100%;
-            height: 100%;
-            border-radius: 0;
-            object-fit: cover;
-        }
-
-        &__content {
-            padding: f.rem(20) f.rem(20) 0 f.rem(20);
-        }
-
-        &__h1, &__h2, &__p {
-            text-align: left;
-        }
-
-        &__footer {
-            margin: 0 f.rem(-20);
-            overflow: hidden;
-
-            & > svg {
-                top: f.rem(-10);
-                width: 105%;
-                height: auto;
-                transform: rotate(356deg);
-            }
-        }
-    }
+	&__a {
+		width: f.rem(32);
+		height: f.rem(32);
+		@include m.pillButton(var(--white), var(--pink), false);
+		&--alt {
+			@include m.pillButton(linear-gradient(to bottom, var(--lightGreen), var(--darkGreen)), var(--darkGreen), true);
+		}
+	}
 }

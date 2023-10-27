@@ -1,0 +1,9 @@
+@for $i from 1 through 6 {
+  .mt-#{$i} {
+    margin-top: #{$i * 0.5rem} !important;
+  }
+
+  .mb-#{$i} {
+    margin-top: #{$i * 0.5rem} !important;
+  }
+}

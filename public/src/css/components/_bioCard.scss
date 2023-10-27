@@ -1,0 +1,120 @@
+@use '../partials/functions' as f;
+@use '../partials/mixins' as m;
+
+.bioCard {
+    position: relative;
+    width: f.rem(320);
+    padding: f.rem(32) f.rem(32) 0 f.rem(32);
+    border-radius: f.rem(16);
+    @include m.flexbox(column, nowrap, flex-start, center);
+    color: var(--lightBlue);
+    background: var(--darkBlue);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+
+    &__a {
+        width: f.rem(32);
+        @include m.rounded(50rem);
+        @include m.flexbox(row, nowrap, center, center);
+        background: var(--white);
+
+        &--alt {
+            position: absolute;
+            top: f.rem(16);
+            right: f.rem(16);
+            background: linear-gradient(180deg, var(--lightGreen) 0%, var(--darkGreen) 100%);
+        }
+    }
+
+    &__img {
+        width: f.rem(176);
+        @include m.rounded(50rem);
+    }
+
+    &__h1, &__h2, &__p {
+        text-align: center;
+    }
+
+    &__h1 {
+        font-size: f.rem(24);
+        font-weight: 700;
+        background: linear-gradient(180deg, var(--pink) 0%, var(--orange) 100%);;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    &__h2 {
+        font-size: f.rem(20);
+        font-weight: 400;
+    }
+
+    &__hr {
+        height: f.rem(1);
+        background: var(--lightBlue);
+        border: none;
+    }
+
+    &__footer {
+        position: relative;
+        z-index: 1;
+        height: f.rem(110);
+        margin: 0 f.rem(-32);
+        @include m.flexbox(row, nowrap, center, center);
+
+        & > svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        nav {
+            z-index: 2;
+
+            ul {
+                @include m.resetUl();
+                @include m.flexbox(row, nowrap, flex-start, stretch, f.rem(24));
+            }
+        }
+    }
+
+    @media (min-width: 992px) {
+        width: f.rem(720);
+        height: f.rem(340);
+        padding: 0;
+        flex-direction: row;
+
+        &__header {
+            width: f.rem(240);
+            height: 100%;
+            flex-shrink: 0;
+        }
+
+        &__img {
+            width: 100%;
+            height: 100%;
+            border-radius: 0;
+            object-fit: cover;
+        }
+
+        &__content {
+            padding: f.rem(20) f.rem(20) 0 f.rem(20);
+        }
+
+        &__h1, &__h2, &__p {
+            text-align: left;
+        }
+
+        &__footer {
+            margin: 0 f.rem(-20);
+            overflow: hidden;
+
+            & > svg {
+                top: f.rem(-10);
+                width: 105%;
+                height: auto;
+                transform: rotate(356deg);
+            }
+        }
+    }
+}

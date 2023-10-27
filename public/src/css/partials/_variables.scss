@@ -1,15 +1,28 @@
-$dark-bg: #1E293A;
-$light-bg: #ffffff;
-$dark-text: #5D7A97;
-$dark-text-gradient: linear-gradient(180deg, #FF2896 0%, #FF9B65 100%);
-$dark-btn-gradient: linear-gradient(180deg, #00FFBF 0%, #00D5D5 100%);
-$shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+@use 'sass:color';
+
+$colors: (
+    "white": #fff,
+    "black": #000,
+    "darkBlue": #1e293a,
+    "lightBlue": #5d7a97,
+    "pink": #ff2896,
+    "orange": #ff9b65,
+    "darkGreen": #00d5d5,
+    "lightGreen": #00ffbf,
+);
 
 :root {
-    --dark-bg: #{$dark-bg};
-    --light-bg: #{$light-bg};
-    --dark-text: #{$dark-text};
-    --dark-text-gradient: #{$dark-text-gradient};
-    --dark-btn-gradient: #{$dark-btn-gradient};
-    --shadow: #{$shadow};
+    @each $color, $value in $colors {
+        --#{$color}: #{$value};
+        --#{$color}-lighter: #{color.scale($value, $lightness: 30%)};
+    }
 }
+
+// breakpoints
+$breakpoints: (
+    sm: 640px,
+    md: 768px,
+    lg: 1024px,
+    xl: 1280px,
+    xxl: 1536px
+);

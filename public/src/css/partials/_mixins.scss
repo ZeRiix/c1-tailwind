@@ -1,0 +1,19 @@
+@mixin flexbox($direction, $wrap, $justify, $align, $gap: 0) {
+    display: flex;
+    flex-direction: $direction;
+    flex-wrap: $wrap;
+    justify-content: $justify;
+    align-items: $align;
+    gap: $gap;
+}
+
+@mixin rounded($radius: 0) {
+    border-radius: $radius;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+
+@mixin resetUl() {
+    padding: 0;
+    list-style: none;
+}

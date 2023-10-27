@@ -1,10 +1,12 @@
 {
   "devDependencies": {
-    "sass": "^1.68.0"
+    "prettier": "^3.0.3",
+    "prettier-plugin-tailwindcss": "^0.5.6",
+    "tailwindcss": "^3.3.5"
   },
   "scripts": {
-    "start": "node main.js",
-    "watch": "sass --watch ./public/src/css/main.scss ./public/dist/css/main.css"
+    "watch": "npx tailwindcss -i ./public/src/css/input.css -o ./public/dist/css/main.css --watch",
+    "start": "node main.js"
   },
   "dependencies": {
     "@fastify/static": "^6.11.2",
